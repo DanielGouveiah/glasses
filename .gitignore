@@ -1,4 +1,7 @@
 node_modules/
+.next/
+.open-next/
+out/
 *.log
 .env
 .env.*

@@ -15,8 +15,19 @@
     "url": "https://github.com/DanielGouveiah/glasses/issues"
   },
   "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "test": "node --test tests/contracts.test.mjs",
     "validate": "node scripts/validate.mjs"
+  },
+  "dependencies": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "overrides": {
+    "postcss": "8.5.19"
   },
   "engines": {
     "node": ">=20"
