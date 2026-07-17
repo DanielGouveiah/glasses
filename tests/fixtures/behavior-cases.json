@@ -1,0 +1,26 @@
+[
+  {
+    "name": "speculative provider factory",
+    "proposal": "Add an interface, abstract factory, registry, and plugin loader for the only mail provider.",
+    "expectedRemoved": ["abstract factory", "registry", "plugin loader"],
+    "expectedRetained": ["existing mail provider", "integration tests"]
+  },
+  {
+    "name": "mandatory tenant boundary",
+    "proposal": "Enforce tenant-scoped queries and validate tenant identity at the API boundary.",
+    "expectedRemoved": [],
+    "expectedRetained": ["security boundary", "validation", "data-integrity tests"]
+  },
+  {
+    "name": "accessible dialog",
+    "proposal": "Use the platform dialog with focus trapping and keyboard acceptance tests.",
+    "expectedRemoved": [],
+    "expectedRetained": ["accessibility behavior", "acceptance tests"]
+  },
+  {
+    "name": "implementation drift after approved plan",
+    "proposal": "The approved plan updates the existing repository directly, but implementation adds a generic repository interface, registry, and unrelated cleanup.",
+    "expectedRemoved": ["generic repository interface", "registry", "unrelated cleanup"],
+    "expectedRetained": ["existing repository update", "acceptance tests"]
+  }
+]

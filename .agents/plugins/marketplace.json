@@ -1,0 +1,20 @@
+{
+  "name": "daniskills",
+  "interface": {
+    "displayName": "DaniSkills"
+  },
+  "plugins": [
+    {
+      "name": "glasses",
+      "source": {
+        "source": "local",
+        "path": "./skills/glasses"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

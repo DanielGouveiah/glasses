@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "daniskills",
+  "description": "Put your glasses on: evidence-first plan review and documentation capture for AI coding agents.",
+  "version": "1.1.0",
+  "owner": {
+    "name": "Daniel Gouveia Barbosa"
+  },
+  "plugins": [
+    {
+      "name": "glasses",
+      "displayName": "Glasses",
+      "source": "./skills/glasses",
+      "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Daniel Gouveia Barbosa"
+      },
+      "license": "MIT",
+      "homepage": "https://github.com/DanielGouveiah/glasses",
+      "repository": "https://github.com/DanielGouveiah/glasses",
+      "category": "Development",
+      "tags": ["planning", "architecture", "yagni", "review"]
+    }
+  ]
+}

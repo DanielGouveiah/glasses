@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/scripts/session-start.mjs\" CopilotSessionStart",
+        "powershell": "node \"$env:PLUGIN_ROOT\\scripts\\session-start.mjs\" CopilotSessionStart",
+        "timeoutSec": 10
+      }
+    ],
+    "subagentStart": [
+      {
+        "type": "command",
+        "bash": "node \"${PLUGIN_ROOT}/scripts/session-start.mjs\" CopilotSubagentStart",
+        "powershell": "node \"$env:PLUGIN_ROOT\\scripts\\session-start.mjs\" CopilotSubagentStart",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

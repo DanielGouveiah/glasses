@@ -1,0 +1,24 @@
+{
+  "name": "daniskills",
+  "version": "1.1.0",
+  "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Daniel Gouveia Barbosa",
+  "homepage": "https://github.com/DanielGouveiah/glasses#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielGouveiah/glasses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanielGouveiah/glasses/issues"
+  },
+  "scripts": {
+    "test": "node --test tests/contracts.test.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

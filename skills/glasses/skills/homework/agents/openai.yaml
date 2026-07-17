@@ -1,0 +1,4 @@
+interface:
+  display_name: "Homework"
+  short_description: "Research technical decisions with evidence"
+  default_prompt: "Research this technical decision, bring receipts, and recommend the cheapest bounded validation plan."

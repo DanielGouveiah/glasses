@@ -1,0 +1,27 @@
+{
+  "name": "glasses",
+  "version": "1.1.0",
+  "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
+  "author": {
+    "name": "Daniel Gouveia Barbosa",
+    "url": "https://github.com/DanielGouveiah"
+  },
+  "homepage": "https://github.com/DanielGouveiah/glasses",
+  "repository": "https://github.com/DanielGouveiah/glasses",
+  "license": "MIT",
+  "keywords": ["planning", "architecture", "diagnosis", "yagni", "review"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Glasses",
+    "shortDescription": "Challenge plans, diagnose, research, capture docs",
+    "longDescription": "Evidence-based planning, bounded implementation diagnosis, approved technical research, and consent-first documentation capture with guarded handoffs.",
+    "developerName": "Daniel Gouveia Barbosa",
+    "category": "Productivity",
+    "capabilities": ["Interactive"],
+    "websiteURL": "https://github.com/DanielGouveiah/glasses",
+    "defaultPrompt": [
+      "Review this implementation plan with Glasses High."
+    ],
+    "brandColor": "#6B7280"
+  }
+}

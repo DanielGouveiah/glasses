@@ -1,0 +1,6 @@
+{
+  "name": "glasses",
+  "version": "1.1.0",
+  "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
+  "contextFileName": "skills/glasses/skills/glasses/SKILL.md"
+}

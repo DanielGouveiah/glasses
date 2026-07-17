@@ -1,0 +1,12 @@
+{
+  "name": "glasses",
+  "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
+  "version": "1.1.0",
+  "author": {
+    "name": "Daniel Gouveia Barbosa"
+  },
+  "license": "MIT",
+  "keywords": ["planning", "architecture", "yagni", "review"],
+  "skills": ["skills/"],
+  "hooks": "hooks/copilot-hooks.json"
+}

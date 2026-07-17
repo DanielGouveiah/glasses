@@ -1,0 +1,19 @@
+description = "Research a technical decision and bring evidence"
+prompt = """
+Run the Homework skill now for `{{args}}`.
+Respond in the language of the user's latest request and localize all workflow
+prose. Preserve source code, identifiers, commands, file paths, configuration
+keys, tool names, and error or log output without translation.
+An explicit general scope takes precedence over project context: when the user
+asks for general or context-free research, do not adapt it to the repository,
+company, or recent conversation.
+Always ask mandatory Q1 before research planning or research, even when the
+assignment appears clear. Use it to confirm the inferred objective, scope, and
+exclusions; then ask further sequentially labeled decision-changing questions
+only when needed. Create a bounded research plan and ask in the user's language
+whether to run it.
+Research only after explicit approval. Present a decision brief with sources,
+then recommend the cheapest bounded validation plan and ask in the user's
+language whether to run it. After explicit approval, execute all named
+experiments within its budget and stopping conditions without expanding scope.
+"""

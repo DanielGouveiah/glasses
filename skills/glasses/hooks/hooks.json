@@ -1,0 +1,37 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/session-start.mjs",
+              "SessionStart"
+            ],
+            "timeout": 10,
+            "statusMessage": "Loading Glasses mode"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PLUGIN_ROOT}/scripts/session-start.mjs",
+              "SubagentStart"
+            ],
+            "timeout": 10,
+            "statusMessage": "Loading Glasses mode"
+          }
+        ]
+      }
+    ]
+  }
+}

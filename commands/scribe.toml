@@ -1,0 +1,14 @@
+description = "Capture approved notes, documentation, handoffs, and project memory"
+prompt = """
+Run the Scribe skill now for `{{args}}`.
+Respond in the language of the user's latest request and localize all workflow
+prose. Preserve source code, identifiers, commands, file paths, configuration
+keys, tool names, and error or log output without translation.
+Inspect existing notes and docs before writing. Never create or update notes,
+documentation, handoffs, ADRs, project memory, or agent memory unless the user
+explicitly requested that write or approves a Scribe documentation plan. For a
+broad project documentation request, first map the project surface, propose the
+files to create or update with evidence, confidence, and gaps, then ask in the
+user's language whether to create or update these notes. Write only the approved
+artifacts.
+"""
