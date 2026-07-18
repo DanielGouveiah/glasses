@@ -56,7 +56,13 @@ export default function Home() {
 
       <nav className="nav shell" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Glasses home">
-          <span className="wordmark-mark">◎</span>
+          <Image
+            className="wordmark-icon"
+            src="/glasses-icon.svg"
+            alt=""
+            width={30}
+            height={30}
+          />
           Glasses
         </a>
         <div className="nav-actions">
@@ -209,7 +215,13 @@ export default function Home() {
 
       <footer className="footer shell">
         <a className="wordmark" href="#top">
-          <span className="wordmark-mark">◎</span>
+          <Image
+            className="wordmark-icon"
+            src="/glasses-icon.svg"
+            alt=""
+            width={30}
+            height={30}
+          />
           Glasses
         </a>
         <p>Evidence-first workflows for AI coding agents.</p>

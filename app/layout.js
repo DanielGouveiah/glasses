@@ -10,6 +10,9 @@ export const metadata = {
     description: "Put your glasses on before the code gets expensive.",
     type: "website",
   },
+  icons: {
+    icon: [{ url: "/glasses-icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }) {

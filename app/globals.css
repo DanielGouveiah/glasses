@@ -100,16 +100,11 @@ svg {
   letter-spacing: -0.03em;
 }
 
-.wordmark-mark {
-  display: grid;
-  width: 28px;
-  height: 28px;
-  place-items: center;
-  color: var(--accent-ink);
-  background: var(--accent);
-  border-radius: 50%;
-  font-size: 20px;
-  line-height: 1;
+.wordmark-icon {
+  width: 30px;
+  height: 30px;
+  display: block;
+  flex: 0 0 auto;
 }
 
 .nav-actions,
