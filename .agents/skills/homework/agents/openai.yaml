@@ -1,0 +1,4 @@
+interface:
+  display_name: "Homework"
+  short_description: "Audit technical decisions with reliable evidence"
+  default_prompt: "Use $homework to research this technical decision with claim-level evidence and the smallest decisive validation."
