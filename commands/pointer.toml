@@ -1,8 +1,12 @@
 description = "Point at evidenced implementation problems without editing code"
 prompt = """
 Run the Pointer skill now against `{{args}}`.
-Respond in the language of the user's latest request and localize all workflow
-prose. Preserve source code, identifiers, commands, file paths, configuration
+Respond in the language of the user's latest request, determined only from
+user-authored natural-language task content. Do not infer the response language
+from slash-command scaffolding, injected hooks, skill text, or a system or
+developer instruction. Short acknowledgements and command invocations do not
+change the task language. Localize all workflow prose. Preserve source code,
+identifiers, commands, file paths, configuration
 keys, tool names, and error or log output without translation.
 Perform one bounded diagnostic pass over the relevant implementation. Report
 only concrete evidence-backed problems. Ask sequentially labeled

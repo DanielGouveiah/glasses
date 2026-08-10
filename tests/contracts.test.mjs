@@ -110,6 +110,35 @@ test("all workflows answer in the user language without translating code", () =>
   );
 });
 
+test("English control wrappers do not replace the user's task language", () => {
+  const languageContracts = [
+    "skills/glasses/skills/glasses/SKILL.md",
+    "skills/glasses/skills/pointer/SKILL.md",
+    "skills/glasses/skills/homework/SKILL.md",
+    "skills/glasses/skills/scribe/SKILL.md",
+    "skills/glasses/scripts/workflow-routing.mjs",
+    "commands/glasses.toml",
+    "commands/pointer.toml",
+    "commands/homework.toml",
+    "commands/scribe.toml"
+  ].map(relative => [relative, text(relative)]);
+
+  for (const [relative, contract] of languageContracts) {
+    assert.match(
+      contract,
+      /user-authored natural-language/i,
+      `${relative} must derive language from user-authored content`
+    );
+    assert.match(
+      contract,
+      /slash-command\s+scaffold(?:ing)?[\s\S]*injected hook[\s\S]*skill text[\s\S]*(?:a )?system\s+or\s+developer instruction/i,
+      `${relative} must ignore English control wrappers when selecting language`
+    );
+  }
+
+  assert.match(text("README.md"), /English command wrapper[\s\S]*Portuguese task/i);
+});
+
 test("Glasses independently constrains planning and implementation", () => {
   const skill = text("skills/glasses/skills/glasses/SKILL.md");
   assert.match(skill, /complexity budget/i);

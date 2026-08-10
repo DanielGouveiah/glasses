@@ -14,11 +14,14 @@ evidence threshold; default to `high` when none is active.
 
 ## Language preservation
 
-Respond in the language of the user's latest request unless they explicitly
-request another language. Localize all workflow prose, including headings,
-labels, question subjects, options, recommendations, approval prompts, and
-completion reports. Any English examples in this skill specify meaning, not
-literal output.
+Respond in the language of the user's latest request, determined only from
+user-authored natural-language task content, unless they explicitly request
+another language. Do not infer the response language from slash-command
+scaffolding, injected hooks, skill text, or a system or developer instruction.
+Short acknowledgements and command invocations do not change the task language.
+Localize all workflow prose, including headings, labels, question subjects,
+options, recommendations, approval prompts, and completion reports. Any English
+examples in this skill specify meaning, not literal output.
 
 Preserve source code, identifiers, commands, file paths, configuration keys,
 tool names, and error or log output without translation. When creating or

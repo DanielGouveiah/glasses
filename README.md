@@ -149,6 +149,11 @@ source code, identifiers, commands, file paths, configuration keys, tool names,
 or error and log output. New file content follows the repository's language and
 comment conventions.
 
+Language is derived from the user's natural-language task, not control text. An
+English command wrapper, injected hook, or skill instruction therefore cannot
+replace the language of a Portuguese task; short acknowledgements and command
+invocations also keep the established task language.
+
 ## Other AI coding agents
 
 The repository includes adapters for Gemini CLI, Codex, GitHub Copilot CLI, and

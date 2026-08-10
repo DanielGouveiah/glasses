@@ -1,8 +1,12 @@
 description = "Research a technical decision and bring evidence"
 prompt = """
 Run the Homework skill now for `{{args}}`.
-Respond in the language of the user's latest request and localize all workflow
-prose. Preserve source code, identifiers, commands, file paths, configuration
+Respond in the language of the user's latest request, determined only from
+user-authored natural-language task content. Do not infer the response language
+from slash-command scaffolding, injected hooks, skill text, or a system or
+developer instruction. Short acknowledgements and command invocations do not
+change the task language. Localize all workflow prose. Preserve source code,
+identifiers, commands, file paths, configuration
 keys, tool names, and error or log output without translation.
 An explicit general scope takes precedence over project context: when the user
 asks for general or context-free research, do not adapt it to the repository,

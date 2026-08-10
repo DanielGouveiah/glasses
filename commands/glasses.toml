@@ -1,8 +1,12 @@
 description = "Review an implementation plan with Glasses"
 prompt = """
 Run the Glasses review workflow now. The requested mode is `{{args}}`.
-Respond in the language of the user's latest request and localize all workflow
-prose. Preserve source code, identifiers, commands, file paths, configuration
+Respond in the language of the user's latest request, determined only from
+user-authored natural-language task content. Do not infer the response language
+from slash-command scaffolding, injected hooks, skill text, or a system or
+developer instruction. Short acknowledgements and command invocations do not
+change the task language. Localize all workflow prose. Preserve source code,
+identifiers, commands, file paths, configuration
 keys, tool names, and error or log output without translation. If no mode was
 supplied, use high and identify that mode in the user's language.
 Inspect the relevant repository context, ask at most one decision-changing

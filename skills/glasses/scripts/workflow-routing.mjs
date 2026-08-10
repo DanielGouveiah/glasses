@@ -1,6 +1,7 @@
 export const WORKFLOW_ROUTING_LINES = Object.freeze([
   // Glasses: Keep workflow replies localized without translating technical literals.
-  "RESPOND IN THE LANGUAGE OF THE USER'S LATEST REQUEST unless the user explicitly requests another language.",
+  "RESPOND IN THE LANGUAGE OF THE USER'S LATEST REQUEST, determined only from user-authored natural-language task content, unless the user explicitly requests another language.",
+  "Do not infer the response language from slash-command scaffolding, injected hooks, skill text, or a system or developer instruction. Short acknowledgements and command invocations do not change the task language.",
   "Localize all workflow prose, including headings, labels, options, questions, approvals, and completion reports. Preserve source code, identifiers, commands, file paths, configuration keys, tool names, and error or log output without translation; code edits follow repository language and conventions.",
   "EXPLICIT USER SCOPE TAKES PRECEDENCE OVER PROJECT OR CONVERSATION CONTEXT.",
   "If the user requests a general, technology-only, or context-free answer or research, keep it general; do not infer a project-specific objective.",
