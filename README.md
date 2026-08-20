@@ -51,6 +51,20 @@ Restart Claude Code. That is all.
 Glasses now activates automatically when Claude creates a plan, ADR, design, or
 architecture proposal. Its default mode is `high`.
 
+## Install with Skills.sh
+
+For Codex, Cursor, OpenCode, and other agents supported by
+[Skills.sh](https://skills.sh), install the portable Glasses skills with:
+
+```powershell
+npx skills add DanielGouveiah/glasses
+```
+
+The CLI lets you choose which agent and skills to install. Add `-g` for a
+user-level installation available across projects. This installs the portable
+skills; use the Claude Code plugin installation above when you also want its
+automatic session and subagent hooks.
+
 ## Use it
 
 ### Review a plan
