@@ -1,6 +1,9 @@
 description = "Point at evidenced implementation problems without editing code"
 prompt = """
 Run the Pointer skill now against `{{args}}`.
+For a bounded consultation from Brainstorm, follow the canonical Pointer
+consultation boundary instead of the standalone correction steps below:
+reuse confirmed answers and return diagnosis and options without applying fixes.
 Respond in the language of the user's latest request, determined only from
 user-authored natural-language task content. Do not infer the response language
 from slash-command scaffolding, injected hooks, skill text, or a system or
@@ -10,7 +13,9 @@ identifiers, commands, file paths, configuration
 keys, tool names, and error or log output without translation.
 Perform one bounded diagnostic pass over the relevant implementation. Report
 only concrete evidence-backed problems. Ask sequentially labeled
-decision-changing questions one at a time when evidence is missing. Then present correction options, trade-offs, a
+decision-changing questions one at a time when evidence is missing. In a
+Brainstorm consultation, return the diagnosis, options, and uncertainties here.
+For standalone Pointer, then present correction options, trade-offs, a
 recommendation, and an accepted correction plan. Ask in the user's language
 whether to apply this correction plan. After explicit approval, apply only that
 plan, verify once, and stop.

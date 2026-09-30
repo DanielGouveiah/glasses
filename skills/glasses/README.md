@@ -20,7 +20,14 @@ project documentation, and visible project memory. Scribe may recommend notes
 from session context, but it never writes notes or memory files unless the user
 requested or approved that specific write.
 
-Glasses, Pointer, Homework, and Scribe use guarded handoffs between planning,
-implementation diagnosis, external research, and documentation capture.
+Use `/glasses:brainstorm` (or clearly ask to brainstorm, explore ideas, or think
+through a decision) for general structured thinking. Brainstorm agrees on the
+session outcome, separates exploration from explicit critique, and leaves
+decisions with the user. A visible session record is optional and requires
+agreement at the start.
+
+Glasses, Pointer, Homework, Scribe, and Brainstorm use guarded handoffs between
+planning, implementation diagnosis, external research, documentation capture,
+and structured thinking.
 
 See the [full documentation](https://github.com/DanielGouveiah/glasses).

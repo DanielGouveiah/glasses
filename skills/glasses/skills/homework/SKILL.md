@@ -5,6 +5,21 @@ description: Researches external technical evidence for a decision, clarifies an
 
 # Homework
 
+## Consultation from Brainstorm
+
+For a bounded technical research consultation, preserve Brainstorm's research
+subquestion, expected deliverable, confirmed objective/scope/exclusions,
+answered Q-labels, and existing permissions. When those intake answers are
+already user-confirmed, they satisfy the Q1 requirement below; ask only about
+missing or changed information. Existing approval of a concrete research scope
+is not invalidated by this handoff, and invoking Homework alone is not approval
+for unspecified research or experiments. Preserve the research and validation
+approval boundaries below. Return findings, sources, confidence, and gaps to
+Brainstorm instead of automatically invoking Glasses or Pointer. Report further
+specialist needs to the originating session. This bounded return is not
+recursive bouncing and does not expand Homework beyond technical research.
+Standalone Homework behavior is unchanged.
+
 The nerd does the homework and brings receipts.
 
 `$ARGUMENTS` optionally provides a research question or target. Support three

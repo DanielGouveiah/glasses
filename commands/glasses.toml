@@ -1,6 +1,9 @@
 description = "Review an implementation plan with Glasses"
 prompt = """
 Run the Glasses review workflow now. The requested mode is `{{args}}`.
+For a bounded consultation from Brainstorm, follow the canonical Glasses
+consultation boundary: reuse confirmed answers and return the requested plan
+or assessment to that session without implementing it.
 Respond in the language of the user's latest request, determined only from
 user-authored natural-language task content. Do not infer the response language
 from slash-command scaffolding, injected hooks, skill text, or a system or

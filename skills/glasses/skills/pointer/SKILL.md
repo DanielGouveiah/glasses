@@ -5,6 +5,18 @@ description: Runs a bounded evidence conversation over an existing implementatio
 
 # Pointer
 
+## Consultation from Brainstorm
+
+When Brainstorm requests bounded diagnosis, use its concrete symptom, expected
+deliverable, confirmed answers, and existing permissions. Inspect the evidence
+and return the diagnosis, correction options, and uncertainties to the
+originating session. Do not enter the correction pass merely because a preferred
+option was identified. Ask only unresolved decision-changing questions. Report
+further specialist needs to Brainstorm rather than starting another handoff for
+the same question. Returning findings is not recursive bouncing. This
+consultation boundary takes precedence over the correction and handoff steps
+below; standalone Pointer behavior and required approvals remain unchanged.
+
 The nerd points at what does not add up.
 
 Use one bounded diagnostic pass. `$ARGUMENTS` optionally identifies a diff,

@@ -5,6 +5,21 @@ description: Captures approved session notes, project documentation, handoffs, A
 
 # Scribe
 
+## Session records for Brainstorm
+
+When Brainstorm passes user consent to keep a specific session record, that
+consent authorizes its initial creation and updates after relevant decisions
+within that session; do not ask again for each update. Preserve the agreed
+path, outcome, current phase, confirmed decisions, options and their origin,
+criteria, assumptions, evidence, specialist findings, pending question, and
+next step. Distinguish recommendations from choices made by the user.
+Follow the session-notes workflow, not the broad project-documentation workflow.
+Return the saved path and any gaps to Brainstorm without starting another
+specialist handoff. If writing is unavailable, return checkpoint text and state
+that no file was saved. If consent is absent or withdrawn, do not write. A
+temporary record is provisional; do not delete it automatically. Standalone
+Scribe behavior and approval requirements remain unchanged.
+
 The nerd takes notes only after consent.
 
 `$ARGUMENTS` optionally provides the note target, scope, or output format.

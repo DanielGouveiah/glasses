@@ -4,7 +4,7 @@
 
 <h1 align="center">Glasses</h1>
 
-<p align="center"><strong>Version 1.1.0</strong></p>
+<p align="center"><strong>Version 1.2.0</strong></p>
 
 <p align="center">
   <strong>Put your glasses on.</strong><br>
@@ -33,6 +33,7 @@ data integrity, validation, observability, and useful tests are never removed.
 | Find and fix a code problem | `/glasses:pointer` | Diagnoses once, recommends a correction, and asks before editing. |
 | Research a technical decision | `/glasses:homework` | Creates a research plan, brings sources, and asks before running validation. |
 | Capture notes or project docs | `/glasses:scribe` | Takes approved notes, maps project docs, and preserves visible memory. |
+| Think through a question or decision | `/glasses:brainstorm` | Explores possibilities, then critiques and compares them while you choose the outcome. |
 
 They can hand work to each other when needed without repeatedly bouncing the
 same decision around.
@@ -142,6 +143,22 @@ Scribe:
 
 Available depths are `skim`, `study` (default), and `thesis`.
 
+### Think through an idea or decision
+
+Brainstorm expands possibilities and challenges assumptions. You decide.
+
+```text
+/glasses:brainstorm
+```
+
+You can also ask directly for brainstorming, idea exploration, or help thinking
+through a decision. Brainstorm first agrees on the session outcome, then helps
+explore ideas before moving into a separate critical evaluation. It can make a
+recommendation using your criteria, while leaving the decision with you. At the
+start, you can choose whether to keep a visible session record; when accepted,
+Brainstorm updates it after relevant decisions. A session can end with a clearer
+problem or open uncertainties instead of a forced decision.
+
 ## What Glasses changes
 
 A Glasses plan clearly states:
@@ -185,6 +202,7 @@ The portable policies live in:
 - [Pointer](skills/glasses/skills/pointer/SKILL.md)
 - [Homework](skills/glasses/skills/homework/SKILL.md)
 - [Scribe](skills/glasses/skills/scribe/SKILL.md)
+- [Brainstorm](skills/glasses/skills/brainstorm/SKILL.md)
 
 ### CLI harness support
 
@@ -199,6 +217,11 @@ The portable policies live in:
 The shared routing policy is generated from
 `skills/glasses/scripts/workflow-routing.mjs` for JavaScript harnesses. Static
 harnesses keep the same routing rules in the Glasses skill and command files.
+Brainstorm uses a harness's native question/options interface when the current
+mode permits it, with one textual question and concise labeled options as the
+fallback. Its optional session checkpoint is a visible Markdown file, saved and
+updated only after the user agrees to keep a record; without file tools, the
+checkpoint remains in the conversation.
 
 ## Configuration
 

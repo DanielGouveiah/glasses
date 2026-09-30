@@ -17,7 +17,7 @@ if (mode !== "off") {
     `GLASSES MODE ACTIVE — level: ${mode}`,
     workflowRoutingPolicy(),
     "ACTIVE FROM PLAN THROUGH IMPLEMENTATION. Do not create, present, accept, or begin implementing a plan, ADR, technical design, or architecture proposal until it has completed the Glasses workflow below. Then keep implementation inside the approved complexity budget. Apply this even when the user does not mention Glasses.",
-    `Use the ${mode} evidence threshold. If the workflow requires a decision-changing answer, ask exactly one question and wait. Otherwise produce the decision-complete replacement plan, implement only that plan, and run its acceptance checks.`,
+    `Use the ${mode} evidence threshold. If the workflow requires a decision-changing answer, ask exactly one question and wait. Otherwise produce the decision-complete replacement plan. Implement only when execution is within the user's requested scope, then run its acceptance checks. Brainstorm exploration and bounded specialist consultations do not authorize implementation.`,
     skill
   ].join("\n\n");
 }

@@ -1,6 +1,9 @@
 description = "Capture approved notes, documentation, handoffs, and project memory"
 prompt = """
 Run the Scribe skill now for `{{args}}`.
+For an accepted Brainstorm checkpoint, follow the canonical Scribe session-record
+rules: initial consent covers that record's relevant session updates. Return
+the path and gaps to Brainstorm; do not restart project-documentation intake.
 Respond in the language of the user's latest request, determined only from
 user-authored natural-language task content. Do not infer the response language
 from slash-command scaffolding, injected hooks, skill text, or a system or

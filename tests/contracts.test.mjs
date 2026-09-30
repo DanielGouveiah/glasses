@@ -36,7 +36,7 @@ test("portable skill metadata and manual command are present", () => {
   assert.match(skill, /user.*language[\s\S]*mode.*high/i);
 });
 
-test("automatic context routes users to all four Glasses workflows", () => {
+test("automatic context routes users to all five Glasses workflows", () => {
   const sessionStart = text("skills/glasses/scripts/session-start.mjs");
   const routing = text("skills/glasses/scripts/workflow-routing.mjs");
   assert.match(sessionStart, /workflowRoutingPolicy/);
@@ -44,6 +44,7 @@ test("automatic context routes users to all four Glasses workflows", () => {
   assert.match(routing, /concrete defect.*failing test.*Skill tool.*glasses:pointer/is);
   assert.match(routing, /external technical choice.*Skill tool.*glasses:homework/is);
   assert.match(routing, /notes.*documentation capture.*Skill tool.*glasses:scribe/is);
+  assert.match(routing, /explicit Brainstorm invocation.*Skill tool.*glasses:brainstorm/is);
   assert.match(routing, /never create or update notes unless the user requested or approved/is);
   assert.match(routing, /Skill calls are mandatory/i);
   assert.match(routing, /Name Pointer, Homework, or Scribe and explain its purpose in one sentence/i);
@@ -62,7 +63,7 @@ test("explicit general scope takes precedence over project context", () => {
 });
 
 test("all workflows answer in the user language without translating code", () => {
-  const names = ["glasses", "pointer", "homework", "scribe"];
+  const names = ["glasses", "pointer", "homework", "scribe", "brainstorm"];
   const skills = names.map(name => text(`skills/glasses/skills/${name}/SKILL.md`));
   const commands = names.map(name => text(`commands/${name}.toml`));
   const routing = text("skills/glasses/scripts/workflow-routing.mjs");
@@ -110,17 +111,48 @@ test("all workflows answer in the user language without translating code", () =>
   );
 });
 
+test("Brainstorm is packaged with its reference and bounded routing", () => {
+  const skill = text("skills/glasses/skills/brainstorm/SKILL.md");
+  const metadata = text("skills/glasses/skills/brainstorm/agents/openai.yaml");
+  const command = text("commands/brainstorm.toml");
+  const routing = text("skills/glasses/scripts/workflow-routing.mjs");
+
+  assert.match(skill, /^---[\s\S]*name: brainstorm[\s\S]*description:/);
+  assert.match(skill, /do not use for routine execution or ordinary informational requests/i);
+  assert.match(skill, /explor(?:e|ation)[\s\S]*without[\s\S]*forcing a defense/i);
+  assert.match(skill, /announce the transition/i);
+  assert.match(skill, /recommendation[\s\S]*not.*user's choice/is);
+  assert.match(skill, /Do not begin implementation or\s+other execution/i);
+  assert.match(skill, /bounded subquestion/i);
+  assert.match(skill, /Research basis[\s\S]*references\/research-basis\.md/i);
+  assert.match(
+    text("skills/glasses/skills/brainstorm/references/research-basis.md"),
+    /human.group[\s\S]*AI facilitator|AI facilitation/i
+  );
+  assert.match(metadata, /display_name:\s*["']?Brainstorm/i);
+  assert.match(metadata, /allow_implicit_invocation:\s*true/i);
+  assert.match(metadata, /default_prompt:[\s\S]*\$brainstorm/i);
+  assert.match(command, /Run the Brainstorm skill/i);
+  assert.match(command, /\{\{args\}\}/);
+  assert.match(command, /Do not execute a proposed next\s+step without authorization/i);
+  assert.match(skill, /\$ARGUMENTS/);
+  assert.match(routing, /explicit Brainstorm invocation or clear request/i);
+  assert.match(routing, /takes precedence over incidental technical context/i);
+});
+
 test("English control wrappers do not replace the user's task language", () => {
   const languageContracts = [
     "skills/glasses/skills/glasses/SKILL.md",
     "skills/glasses/skills/pointer/SKILL.md",
     "skills/glasses/skills/homework/SKILL.md",
     "skills/glasses/skills/scribe/SKILL.md",
+    "skills/glasses/skills/brainstorm/SKILL.md",
     "skills/glasses/scripts/workflow-routing.mjs",
     "commands/glasses.toml",
     "commands/pointer.toml",
     "commands/homework.toml",
-    "commands/scribe.toml"
+    "commands/scribe.toml",
+    "commands/brainstorm.toml"
   ].map(relative => [relative, text(relative)]);
 
   for (const [relative, contract] of languageContracts) {
@@ -182,8 +214,7 @@ test("Homework clarifies, plans, researches, and validates only after approval",
   assert.match(homework, /explicit approval/i);
   assert.match(homework, /specifications.*official documentation/is);
   assert.match(homework, /options and trade-offs/i);
-  assert.match(homework, /cheapest bounded validation plan/i);
-  assert.match(homework, /multiple experiments.*matrix cells/is);
+  assert.match(homework, /bounded validation(?: plan)? that could change the decision/i);
   assert.match(homework, /budget.*stopping/is);
   assert.match(homework, /user's language[\s\S]*run the validation plan/i);
   assert.match(homework, /every approved experiment/i);
@@ -312,6 +343,8 @@ test("session hook handles Windows-style paths containing spaces", () => {
   assert.match(output.hookSpecificOutput.additionalContext, /PLAN THROUGH IMPLEMENTATION/);
   assert.match(output.hookSpecificOutput.additionalContext, /Inspect relevant code/);
   assert.match(output.hookSpecificOutput.additionalContext, /EXPLICIT USER SCOPE TAKES PRECEDENCE/);
+  assert.match(output.hookSpecificOutput.additionalContext, /glasses:brainstorm/);
+  assert.match(output.hookSpecificOutput.additionalContext, /Brainstorm exploration and bounded specialist consultations do not authorize implementation/i);
   assert.match(output.hookSpecificOutput.additionalContext, /general informational or learning request: answer directly/i);
 });
 

@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "daniskills",
-  "description": "Put your glasses on: evidence-first plan review and documentation capture for AI coding agents.",
-  "version": "1.1.1",
+  "description": "Put your glasses on: structured thinking, evidence-first review, and documentation capture for AI agents.",
+  "version": "1.2.0",
   "owner": {
     "name": "Daniel Gouveia Barbosa"
   },
@@ -11,8 +11,8 @@
       "name": "glasses",
       "displayName": "Glasses",
       "source": "./skills/glasses",
-      "description": "Evidence-first planning, diagnosis, technical research, and documentation capture for AI coding agents.",
-      "version": "1.1.1",
+      "description": "Structured thinking, evidence-first planning, diagnosis, technical research, and documentation capture for AI agents.",
+      "version": "1.2.0",
       "author": {
         "name": "Daniel Gouveia Barbosa"
       },

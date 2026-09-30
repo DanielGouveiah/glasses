@@ -30,6 +30,13 @@ const workflows = [
     description:
       "Capture approved decisions, handoffs, and project knowledge as visible, reviewable documentation.",
   },
+  {
+    index: "05",
+    name: "Brainstorm",
+    command: "/glasses:brainstorm",
+    description:
+      "Explore ideas, examine them critically, and support your decision without taking it over.",
+  },
 ];
 
 const harnesses = [
@@ -66,7 +73,7 @@ export default function Home() {
           Glasses
         </a>
         <div className="nav-actions">
-          <span className="version">v1.1.0</span>
+          <span className="version">v1.2.0</span>
           <a
             className="nav-link"
             href="https://github.com/DanielGouveiah/glasses"
@@ -142,7 +149,7 @@ export default function Home() {
       <section className="workflows shell" id="workflows">
         <div className="section-heading">
           <div>
-            <p className="section-label">Four focused workflows</p>
+            <p className="section-label">Five focused workflows</p>
             <h2>Choose the nerd you need.</h2>
           </div>
           <p>
@@ -201,7 +208,7 @@ export default function Home() {
 
       <section className="closing shell">
         <div>
-          <p className="section-label">Glasses v1.1.0</p>
+          <p className="section-label">Glasses v1.2.0</p>
           <h2>Write less machinery. Keep what matters.</h2>
         </div>
         <a

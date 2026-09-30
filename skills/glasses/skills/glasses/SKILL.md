@@ -50,6 +50,11 @@ question; otherwise answer directly.
 
 Before acting, route to the matching Glasses workflow:
 
+- An explicit Brainstorm invocation or clear request for brainstorming, idea
+  exploration, or help thinking through a decision: invoke Brainstorm. This
+  takes precedence over incidental technical context; do not turn exploration
+  into implementation planning unless the user asks for that outcome. Do not
+  activate Brainstorm merely because structured thinking might be useful.
 - Planning, architecture, ADRs, or design proposals: apply Glasses.
 - Concrete defects, failing tests, violated contracts, suspicious existing
   implementations, or focused code diagnosis: invoke Pointer.
@@ -65,6 +70,23 @@ Before acting, route to the matching Glasses workflow:
 Name Pointer, Homework, or Scribe and explain its purpose in one sentence when
 handoff conditions match. Do not force those requests through the Glasses
 planning workflow first.
+
+Invoke skills using the current harness's supported mechanism. If there is no
+skill invocation tool, load the installed skill instructions (or the canonical
+`skills/glasses/skills/<name>/SKILL.md` in this repository). If unavailable,
+report that limitation without claiming the specialist ran. Announce Brainstorm
+and its purpose when routing to it, just as for the other personas.
+
+## Consultation from Brainstorm
+
+When Brainstorm requests a bounded technical planning consultation, use its
+subquestion, expected deliverable, confirmed criteria and answers, and existing
+permissions. Ask only for missing decision-changing information. Return the
+plan or assessment, reasons, and unresolved issues to the originating session.
+This consultation ends at that deliverable; the implementation discipline below
+does not authorize executing it. Do not launch another persona for the same
+question: report any further specialist need to Brainstorm. Returning findings
+is not a recursive handoff. Standalone Glasses behavior is unchanged.
 
 ## Evidence thresholds
 
