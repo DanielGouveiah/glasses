@@ -80,7 +80,7 @@ export default function Home() {
           Glasses
         </a>
         <div className="nav-actions">
-          <span className="version">v1.2.0</span>
+          <span className="version">v1.3.0</span>
           <a
             className="nav-link"
             href="https://github.com/DanielGouveiah/glasses"
@@ -215,7 +215,7 @@ export default function Home() {
 
       <section className="closing shell">
         <div>
-          <p className="section-label">Glasses v1.2.0</p>
+          <p className="section-label">Glasses v1.3.0</p>
           <h2>Write less machinery. Keep what matters.</h2>
         </div>
         <a

@@ -4,7 +4,7 @@
 
 <h1 align="center">Glasses</h1>
 
-<p align="center"><strong>Version 1.2.0</strong></p>
+<p align="center"><strong>Version 1.3.0</strong></p>
 
 <p align="center">
   <strong>Put your glasses on.</strong><br>
