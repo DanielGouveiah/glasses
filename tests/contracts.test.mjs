@@ -240,6 +240,35 @@ test("Scribe captures documentation only after request or approval", () => {
   assert.match(scribe, /\$ARGUMENTS/);
 });
 
+test("Reversa recovers business rules read-only, one part per run", () => {
+  const reversa = text("skills/glasses/skills/reversa/SKILL.md");
+  assert.match(reversa, /^---[\s\S]*name: reversa[\s\S]*description:/);
+  assert.match(reversa, /\/glasses:reversa/);
+  assert.match(reversa, /\$ARGUMENTS/);
+  assert.match(reversa, /One part per run/i);
+  assert.match(reversa, /read-only/i);
+  assert.match(reversa, /language of the user's latest request/i);
+  assert.match(reversa, /localize.*workflow prose/i);
+  assert.match(reversa, /markers stay in\s+English in every language/i);
+  assert.match(reversa, /Map[\s\S]*Dig[\s\S]*Interpret[\s\S]*Cross-check[\s\S]*Review/);
+  assert.match(reversa, /`90\.00`–`100\.00`[\s\S]*`50\.00`–`89\.99`[\s\S]*`0\.00`–`49\.99`/);
+  assert.match(reversa, /`\[PROMPT\]` without a behavior test → at most `70\.00`/);
+  assert.doesNotMatch(reversa, /🟢|🟡|🔴/);
+  assert.match(reversa, /\[CODE\][\s\S]*\[PROMPT\][\s\S]*\[POC\]/);
+  assert.match(reversa, /\| # \| Rule \| Type \| Enforcement \| Evidence \| Declared \| Conf\. \|/);
+  assert.match(reversa, /\| # \| Question \| Severity \| Owner \| Outcome \|/);
+  assert.match(reversa, /\*\*`restricted`\*\*/);
+  assert.match(reversa, /\*\*coverage, not correctness\*\*/i);
+  assert.match(reversa, /which part comes next/i);
+  assert.match(reversa, /Q1[\s\S]*Q2/);
+  assert.match(reversa, /AskUserQuestion/);
+  assert.match(reversa, /request_user_input/);
+  assert.match(reversa, /invoke\s+Pointer/i);
+  assert.match(reversa, /invoke\s+Scribe/i);
+  assert.match(text("README.md"), /\/glasses:reversa/);
+  assert.match(text("skills/glasses/README.md"), /\/glasses:reversa/);
+});
+
 test("clarification questions are traceable across all skills", () => {
   for (const name of ["glasses", "pointer", "homework", "scribe"]) {
     const skill = text(`skills/glasses/skills/${name}/SKILL.md`);

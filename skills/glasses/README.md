@@ -26,6 +26,11 @@ session outcome, separates exploration from explicit critique, and leaves
 decisions with the user. A visible session record is optional and requires
 agreement at the start.
 
+Use `/glasses:reversa [part]` to recover business rules from existing code,
+one module or feature at a time. Reversa is read-only on the target project,
+grades every rule by evidence, flags rules that no document declares, and asks
+which part comes next instead of continuing on its own.
+
 Glasses, Pointer, Homework, Scribe, and Brainstorm use guarded handoffs between
 planning, implementation diagnosis, external research, documentation capture,
 and structured thinking.

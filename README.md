@@ -34,6 +34,7 @@ data integrity, validation, observability, and useful tests are never removed.
 | Research a technical decision | `/glasses:homework` | Creates a research plan, brings sources, and asks before running validation. |
 | Capture notes or project docs | `/glasses:scribe` | Takes approved notes, maps project docs, and preserves visible memory. |
 | Think through a question or decision | `/glasses:brainstorm` | Explores possibilities, then critiques and compares them while you choose the outcome. |
+| Recover business rules from existing code | `/glasses:reversa` | Digs one part at a time, read-only, grades every rule by evidence, and asks before moving on. |
 
 They can hand work to each other when needed without repeatedly bouncing the
 same decision around.
@@ -159,6 +160,22 @@ start, you can choose whether to keep a visible session record; when accepted,
 Brainstorm updates it after relevant decisions. A session can end with a clearer
 problem or open uncertainties instead of a forced decision.
 
+### Recover business rules from existing code
+
+```text
+/glasses:reversa the checkout module
+```
+
+Reversa:
+
+1. Never edits the target project; findings stay in the conversation.
+2. Maps the entry points of one part, digs for signals, and turns each one
+   into a rule in business language with `file:line` evidence.
+3. Scores every rule's confidence from `0.00` to `100.00` (confirmed, inferred,
+   or gap bands, with caps), and marks whether code or only a prompt enforces it.
+4. Flags rules that no ADR, spec, or doc declares as restricted.
+5. Reports coverage for that part, then asks which part comes next.
+
 ## What Glasses changes
 
 A Glasses plan clearly states:
@@ -203,6 +220,7 @@ The portable policies live in:
 - [Homework](skills/glasses/skills/homework/SKILL.md)
 - [Scribe](skills/glasses/skills/scribe/SKILL.md)
 - [Brainstorm](skills/glasses/skills/brainstorm/SKILL.md)
+- [Reversa](skills/glasses/skills/reversa/SKILL.md)
 
 ### CLI harness support
 

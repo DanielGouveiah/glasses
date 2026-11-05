@@ -37,6 +37,13 @@ const workflows = [
     description:
       "Explore ideas, examine them critically, and support your decision without taking it over.",
   },
+  {
+    index: "06",
+    name: "Reversa",
+    command: "/glasses:reversa",
+    description:
+      "Dig existing code for undeclared business rules, one part at a time, read-only, with file:line evidence and a confidence score.",
+  },
 ];
 
 const harnesses = [
@@ -149,7 +156,7 @@ export default function Home() {
       <section className="workflows shell" id="workflows">
         <div className="section-heading">
           <div>
-            <p className="section-label">Five focused workflows</p>
+            <p className="section-label">Six focused workflows</p>
             <h2>Choose the nerd you need.</h2>
           </div>
           <p>
